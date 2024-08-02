@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+    --primary-hue: 182;
+    --gray-hue: 240;
+    /* --color-primary: hsl(var(--primary-hue),61%,74%); */
+    --color-primary: #01889F;
+    --color-primary-variant: hsl(var(--primary-hue),100%,50%);
+    --color-secondary: rgb(255, 102, 0);
+    --color-gray-100: hsl(var(--primary-hue),47%,94%);
+    --color-gray-200: hsl(var(--primary-hue),0%,11%);
+    --color-gray-300: hsl(var(--primary-hue),24%,64%);
+    --color-gray-400: hsl(var(--primary-hue),16%,41%);
+    --color-gray-500: hsl(var(--primary-hue),44%,25%);
+    --color-gray-600: hsl(var(--primary-hue),48%,100%);
+
+    --container-width-lg: 80%;
+    --container-width-mg: 90%;
+
+    --transition: all 500ms ease ;
 }
+
+body{
+    font-family: 'montserrat',sans-serif;
+    color: var(--color-gray-200);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background: var(--color-gray-600);
+}
+
+.container{
+    width: var(--container-width-lg);
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+h1,h2,h3,h4,h5{
+    line-height: 1.2;
+    color: var(--color-gray-100);
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.1rem;
+}
+a{
+    color: var(--color-gray-200);
+    /* font-size: 1.1rem;
+    font-weight: 400; */
+}
+img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}           

@@ -1,0 +1,144 @@
+nav {
+  height: 6rem;
+  width: 100vw;
+  background-color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99; 
+  font-size: 18px;
+  font-weight: 400;
+
+}
+
+.nav-container {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  width: 9rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--color-gray-200);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary);
+}
+
+.active-nav {
+  position: relative;
+}
+
+.active-nav::after {
+  content: "";
+  display: block;
+  height: 1.4rem;
+  width: 1.4rem;
+  background-color: var(--color-primary);
+  position: absolute;
+  left: calc(50% - 0.6rem);
+  transform: rotate(45deg);
+  margin-top: 1.3rem;
+}
+
+.nav-togglebutton {
+  display: none;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav-togglebutton svg {
+  color: var(--color-gray-100);
+}
+
+/*----- media query -----*/
+@media screen and (max-width: 1024px) {
+  .nav-togglebutton {
+    display: flex;
+  }
+
+  .nav-togglebutton svg{
+    color: var(--color-gray-200);
+  }
+  .active-nav,.active-nav::after {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    perspective: none;
+  }
+
+  .nav-links li{
+    height: 4rem;
+    width: 100%;
+    box-shadow: -1rem 1rem 2rem rgba(0,0,0,0.1);
+    animation: navAnimation 1s ease forwards;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+  }
+
+  .nav-links li:nth-child(2){
+    animation-delay: 200ms;
+  }
+  .nav-links li:nth-child(3){
+    animation-delay: 400ms;
+  } 
+  .nav-links li:nth-child(4){
+    animation-delay: 600ms;
+  } 
+  .nav-links li:nth-child(5){
+    animation-delay: 800ms;
+  }
+  .nav-links li:nth-child(6){
+    animation-delay: 1s;
+  }
+
+  @keyframes navAnimation {
+    
+    to{
+        transform: rotate(0);
+        opacity: 1;
+    }
+  }
+
+  .nav-links li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--color-gray-200);
+    padding: 1rem 5rem 1rem 3rem;
+    background-color: var(--color-primary);
+  }
+
+  .show-nav{
+    display: flex;
+  }
+  .hide-nav{
+    display: none;
+  }
+
+  
+}
